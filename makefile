@@ -8,10 +8,11 @@ textlabel: LDLIBS += $(shell pkg-config --libs freetype2) -lfontconfig
 all: pt1230 textlabel line2bitmap
 
 install:
-	install -m 0755 pt1230 "$(DESTDIR)$(PREFIX)/sbin"
-	install -m 0755 textlabel "$(DESTDIR)$(PREFIX)/bin"
-	install -m 0755 line2bitmap "$(DESTDIR)$(PREFIX)/bin"
-
+	mkdir -p "$(PREFIX)/sbin"
+	mkdir -p "$(PREFIX)/bin"
+	install -m 0755 pt1230 "$(PREFIX)/sbin"
+	install -m 0755 textlabel "$(PREFIX)/bin"
+	install -m 0755 line2bitmap "$(PREFIX)/bin"
 
 clean:
 	-rm interactive
