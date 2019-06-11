@@ -1,0 +1,4 @@
+./text-multi-line.py -f "Courier New:bold" -s 100  "test
+testa
+teregf df
+fsdf" | pt1230 -d /dev/usb/lp1 -b -c
